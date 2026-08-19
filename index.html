@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saleh | Data Analyst & ML Practitioner</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --accent-color: #10b981;
+            --accent-hover: #059669;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .location {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .links-btn {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .card p, .card ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            padding-left: 18px;
+        }
+
+        .card ul li {
+            margin-bottom: 6px;
+        }
+
+        .tags-container {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tag-proto {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .timeline-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .timeline-org {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .timeline-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Omar Saleh</h1>
+            <div class="subtitle">Data Analyst & Machine Learning Practitioner</div>
+            <div class="location">📍 El Faiyum, Egypt | 3rd Year Computer Science Student @ EELU</div>
+            <p class="hero-desc">
+                Building practical data-driven models and analytical solutions backed by a strong foundation in Computer Science, Applied Mathematics, and Software Engineering.
+            </p>
+            <div class="links-btn">
+                <a href="https://www.linkedin.com/in/omarsaleh-cs" target="_blank" class="btn btn-primary">LinkedIn</a>
+                <a href="https://github.com/omarSalahDev" target="_blank" class="btn">GitHub</a>
+                <a href="mailto:2401601@student.eelu.edu.eg" class="btn">Email</a>
+                <a href="https://leetcode.com/omarSalahDev" target="_blank" class="btn">LeetCode</a>
+                <a href="https://codeforces.com/profile/omar99390315" target="_blank" class="btn">Codeforces</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                I am a third-year Computer Science student at the Egyptian E-Learning University (EELU) with a passion for Data Analysis and Machine Learning. My coursework and hands-on training cover Data Preprocessing, Machine Learning Algorithms, Database Systems, and Core CS Fundamentals.
+            </p>
+            <p class="about-text">
+                I strongly believe in practical learning by building real projects and sharing knowledge. I created an 8-video Mathematics 2 tutorial series for CS freshmen, reaching over 2,500+ views on YouTube, and I actively share technical insights and data projects on LinkedIn.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Stack & Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis & ML</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">Power BI</span>
+                        <span class="skill-item">Excel</span>
+                        <span class="skill-item">Scikit-Learn</span>
+                        <span class="skill-item">XGBoost</span>
+                        <span class="skill-item">SHAP</span>
+                        <span class="skill-item">Matplotlib / Seaborn</span>
+                        <span class="skill-item">EDA & Preprocessing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core CS & Web</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Java (OOP)</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML5 / CSS3</span>
+                        <span class="skill-item">Data Structures & Algorithms</span>
+                        <span class="skill-item">DBMS</span>
+                        <span class="skill-item">Computer Networks (CCNA)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Mathematics & Concepts</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Calculus</span>
+                        <span class="skill-item">Linear Algebra</span>
+                        <span class="skill-item">Probability & Statistics</span>
+                        <span class="skill-item">Discrete Mathematics</span>
+                        <span class="skill-item">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div>
+                        <h3>Autism Spectrum Disorder Early Detection</h3>
+                        <div class="card-meta">National Telecommunication Institute (NTI)</div>
+                        <ul>
+                            <li>Built an end-to-end Machine Learning pipeline for healthcare diagnostics.</li>
+                            <li>Applied SMOTE to resolve dataset class imbalance.</li>
+                            <li>Benchmarked Decision Tree, Random Forest, and XGBoost models, achieving 83% accuracy.</li>
+                            <li>Integrated SHAP values for model explainability and diagnostic trust.</li>
+                        </ul>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">SHAP</span>
+                        <span class="tag">Python</span>
+                        <br><br>
+                        <a href="https://github.com/omarSalahDev/ASD-Classification-NTI" target="_blank" class="btn">View Repository</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Student Performance Prediction & Analysis</h3>
+                        <div class="card-meta">EELU — University Team Project (Leader)</div>
+                        <ul>
+                            <li>Led a team to analyze student academic performance metrics.</li>
+                            <li>Performed extensive Exploratory Data Analysis (EDA) using Matplotlib and Seaborn.</li>
+                            <li>Built and evaluated Scikit-Learn classification models to forecast student outcomes.</li>
+                        </ul>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Team Lead</span>
+                        <br><br>
+                        <a href="https://github.com/omarSalahDev/student-performance-prediction" target="_blank" class="btn">View Repository</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Point Gym Web Application</h3>
+                        <div class="card-meta">Frontend Team Project</div>
+                        <ul>
+                            <li>Designed a responsive multi-page web platform for fitness center management.</li>
+                            <li>Implemented layouts using modern CSS Grid and Flexbox.</li>
+                            <li>Built client-side interactive logic and form validations with JavaScript.</li>
+                        </ul>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS Grid/Flexbox</span>
+                        <span class="tag">HTML5</span>
+                        <br><br>
+                        <a href="https://github.com/omarSalahDev/point-gym-webapp" target="_blank" class="btn">View Repository</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Novyra (EdTech Platform)</h3>
+                        <div class="card-meta">Prototype / Ongoing Project</div>
+                        <ul>
+                            <li>Developing an educational technology platform exploring AI-driven learning pathways.</li>
+                            <li>Aims to help university students bridge the gap between academic curricula and market demands.</li>
+                        </ul>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tag tag-proto">In Development</span>
+                        <span class="tag">AI / EdTech</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience & Training</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Machine Learning & Data Analysis Trainee</div>
+                        <div class="timeline-org">National Telecommunication Institute (NTI) — Creativa Hubs</div>
+                    </div>
+                    <div class="timeline-date">Jul 2026 – Aug 2026</div>
+                </div>
+                <ul>
+                    <li>Completed an intensive 120-hour program divided into Technical (90 hrs) and Freelancing (30 hrs) tracks.</li>
+                    <li>Covered ML preprocessing, EDA, supervised/unsupervised learning, model evaluation, Scikit-learn, and TensorFlow.</li>
+                    <li>Learned digital freelancing strategies, personal branding, and portfolio optimization.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Mathematics Instructor (Peer Tutoring & Content Creation)</div>
+                        <div class="timeline-org">Freelance / YouTube</div>
+                    </div>
+                    <div class="timeline-date">Feb 2026 – May 2026</div>
+                </div>
+                <ul>
+                    <li>Produced structured video tutorials for university Calculus, Math 1, and Math 2 for CS freshmen.</li>
+                    <li>Reached 2,500+ total views on core review sessions with strong student engagement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Bachelor’s Degree in Computer Science and Information Systems</div>
+                        <div class="timeline-org">The Egyptian E-Learning University (EELU) — Fayoum Branch</div>
+                    </div>
+                    <div class="timeline-date">2024 – 2028 | Grade: Very Good</div>
+                </div>
+                <p class="about-text">
+                    <strong>Key Coursework:</strong> Java OOP, Data Structures & Algorithms, Database Management Systems (DBMS), Discrete Mathematics, Probability & Statistics.
+                </p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Licenses & Certifications</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>ITS — Artificial Intelligence</h3>
+                    <div class="card-meta">Certiport (Pearson VUE) | Aug 2026</div>
+                    <p>Score: 811/1000. Certified in fundamental AI concepts, feature engineering, ML algorithms, and model evaluation.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Python Essentials 1 & 2</h3>
+                    <div class="card-meta">Cisco Networking Academy | Jun 2026</div>
+                    <p>70-hour training covering Python 3 syntax, OOP, modules, debugging, and data processing fundamentals.</p>
+                </div>
+
+                <div class="card">
+                    <h3>CCNA: Introduction to Networks</h3>
+                    <div class="card-meta">Cisco Networking Academy / EELU | May 2026</div>
+                    <p>Foundational knowledge in network architectures, IPv4/IPv6 addressing, switches, routers, and troubleshooting.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Omar Saleh. Built & hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
