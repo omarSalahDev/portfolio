@@ -37,6 +37,25 @@
         header {
             padding: 40px 0 20px;
             border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap-reverse;
+            gap: 20px;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            flex-shrink: 0;
         }
 
         h1 {
@@ -265,6 +284,8 @@
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .timeline-header { flex-direction: column; }
+            header { justify-content: center; text-align: center; }
+            .links-btn { justify-content: center; }
         }
     </style>
 </head>
@@ -272,19 +293,22 @@
 
     <div class="container">
         <header>
-            <h1>Omar Saleh</h1>
-            <div class="subtitle">Data Analyst & Machine Learning Practitioner</div>
-            <div class="location">📍 El Faiyum, Egypt | 3rd Year Computer Science Student @ EELU</div>
-            <p class="hero-desc">
-                Building practical data-driven models and analytical solutions backed by a strong foundation in Computer Science, Applied Mathematics, and Software Engineering.
-            </p>
-            <div class="links-btn">
-                <a href="https://www.linkedin.com/in/omarsaleh-cs" target="_blank" class="btn btn-primary">LinkedIn</a>
-                <a href="https://github.com/omarSalahDev" target="_blank" class="btn">GitHub</a>
-                <a href="mailto:2401601@student.eelu.edu.eg" class="btn">Email</a>
-                <a href="https://leetcode.com/omarSalahDev" target="_blank" class="btn">LeetCode</a>
-                <a href="https://codeforces.com/profile/omar99390315" target="_blank" class="btn">Codeforces</a>
+            <div class="header-content">
+                <h1>Omar Saleh</h1>
+                <div class="subtitle">Data Analyst & Machine Learning Practitioner</div>
+                <div class="location">📍 El Faiyum, Egypt | 3rd Year Computer Science Student @ EELU</div>
+                <p class="hero-desc">
+                    Building practical data-driven models and analytical solutions backed by a strong foundation in Computer Science, Applied Mathematics, and Software Engineering.
+                </p>
+                <div class="links-btn">
+                    <a href="https://www.linkedin.com/in/omarsaleh-cs" target="_blank" class="btn btn-primary">LinkedIn</a>
+                    <a href="https://github.com/omarSalahDev" target="_blank" class="btn">GitHub</a>
+                    <a href="mailto:2401601@student.eelu.edu.eg" class="btn">Email</a>
+                    <a href="https://leetcode.com/omarSalahDev" target="_blank" class="btn">LeetCode</a>
+                    <a href="https://codeforces.com/profile/omar99390315" target="_blank" class="btn">Codeforces</a>
+                </div>
             </div>
+            <img src="profile.jpg" alt="Omar Saleh" class="profile-img">
         </header>
 
         <section id="about">
